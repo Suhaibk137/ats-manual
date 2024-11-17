@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Report Generator</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">ATS Report Generator</h1>
+        
+        <form id="atsForm" class="form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required 
+                       placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required 
+                       placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="strength">Profile Strength</label>
+                <select id="strength" name="strength" required class="strength-select">
+                    <option value="">Select strength level</option>
+                    <option value="1">Strong (90-100%)</option>
+                    <option value="2">Medium (40-89%)</option>
+                    <option value="3">Weak (0-39%)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="atsCompatible">ATS Compatibility</label>
+                <select id="atsCompatible" name="atsCompatible" required class="strength-select">
+                    <option value="">Select ATS compatibility</option>
+                    <option value="1">ATS Compatible</option>
+                    <option value="2">Not ATS Compatible</option>
+                </select>
+                <span class="help-text">Choose whether your resume follows ATS guidelines</span>
+            </div>
+
+            <div class="form-group">
+                <label for="keywords">Keywords (comma separated)</label>
+                <textarea id="keywords" name="keywords" required 
+                         placeholder="Enter keywords separated by commas"
+                         class="keywords-input"></textarea>
+                <span class="help-text">Example: javascript, react, nodejs</span>
+            </div>
+
+            <!-- Updated Score Input -->
+            <div class="form-group">
+                <label for="score">ATS Score</label>
+                <div class="score-input-container">
+                    <input type="number" 
+                           id="score" 
+                           name="score" 
+                           required 
+                           min="0" 
+                           max="100" 
+                           placeholder="Enter score"
+                           class="score-input">
+                    <span class="percentage-symbol">%</span>
+                </div>
+                <span class="help-text">Enter score (0-100)</span>
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" onclick="generateReport()" class="generate-btn">
+                    Generate Report
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>
